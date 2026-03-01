@@ -30,20 +30,20 @@ class Admin{
         System.out.print("Enter password : ");
         String password = sc.nextLine();
 
-        // username.isEmpty() || password.isEmpty()
-        // !(username.equals(this.username) && password.equals(this.password))
 
-        if(false)
+
+        if(username == null|| password == null)
             System.out.println("Every Field is Required");
-
-        if(false){
+        
+        if(!username.equals(this.username) || !password.equals(this.password))
             System.out.println("Wrong Credential");
-            return;
-        }
 
-        System.out.println("Successfully Login as Admin");
-        UtilFunc.clrscr();
-        options();
+        else
+            {
+            System.out.println("Successfully Login as Admin");
+            UtilFunc.clrscr();
+            options();
+        }
     }
 
     private void changePassword(){
@@ -58,6 +58,7 @@ class Admin{
         else{
             this.password = password;
             System.out.println("Password Changed Successfully!!!!!!");
+            sc.close();
         }
     }
 
@@ -74,6 +75,7 @@ class Admin{
             this.username = username;
             System.out.println("Username Changed Successfully!!!!!!");
         }
+        sc.close();
     }
 
     public void listItems(){
@@ -127,6 +129,7 @@ class Admin{
             default:
                 System.out.println("Wrong Choice");
         }
+        sc.close();
     }
 
     private void options(){
@@ -187,16 +190,12 @@ class Serving{
     }
 
     public void mainDish(LocalTime time, Breakfast bf, Lunch lun, Dinner din, Sidedish sidedish, Cart cart, Payment payment){
-        String timing = "";
         if(time.getHour()<=11) {
             food = bf;
-            timing="breakfast";
         }else if(time.getHour()<=18) {
             food = lun;
-            timing="lunch";
         }else {
             food = din;
-            timing="dinner";
         }
 
         if(food==null) {
@@ -269,6 +268,7 @@ class User{
             System.out.print("\nDo you want to continue(Y/N) : ");
             ch = sc.next().toLowerCase().charAt(0);
         }
+        sc.close();
     }
 }
 
@@ -281,10 +281,10 @@ public class Main {
     static Payment payment;
 
     public static void main(String[] args) {
-        System.out.println("----------------------------");
-        System.out.println("|   MARAN PORATTA KADAI    |");
-        System.out.println("| Kovilvasal, Kalugumalai. |");
-        System.out.println("----------------------------\n");
+        System.out.println("------------------");
+        System.out.println("|   Ulaanbaatar   |");
+        System.out.println("|   Restaurant    |");
+        System.out.println("------------------\n");
 
         breakfast = new Breakfast();
         lunch = new Lunch();

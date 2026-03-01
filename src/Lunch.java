@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Lunch extends Food {
     private ArrayList<Item> lunch = new ArrayList<Item>();
     private final int[] id = { 1, 2, 3, 4, 5 };
-    private final String[] names = {"Poratta", "Chappathi", "Meals", "Biriyani", "Fried Rice"};
-    private final int[] prices = {15, 15, 60, 80, 60};
+    private final String[] names = {"Soup", "Fried Fish", "Meals", "Fried Pork", "Fried Rice"};
+    private final int[] prices = {20000, 25000, 30000, 35000, 25000};
 
     public void makeFood(){
         for(int i=0;i<names.length;i++){

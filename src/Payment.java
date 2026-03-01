@@ -4,7 +4,6 @@ public class Payment {
     private final Scanner sc = new Scanner(System.in);
 
     public void payBill(Cart cart){
-        boolean bool = true;
         System.out.println("""
                 ----------------
                 |     Cart     |
@@ -21,7 +20,6 @@ public class Payment {
                 System.out.println("Please Enter correct Amount");
             }else {
                 cart.clearCart();
-                bool = false;
             }
         }
 
