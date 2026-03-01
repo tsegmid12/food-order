@@ -2,7 +2,7 @@ import java.time.LocalTime;
 import java.util.Scanner;
 
 class Admin{
-    private String username = "sakthivel";
+    private String username = "admin";
     private String password = "123456789";
     Scanner sc = new Scanner(System.in);
     Food Breakfast, Lunch, Dinner, Sidedish;
@@ -34,7 +34,7 @@ class Admin{
 
         if(username == null|| password == null)
             System.out.println("Every Field is Required");
-        
+
         if(!username.equals(this.username) || !password.equals(this.password))
             System.out.println("Wrong Credential");
 
