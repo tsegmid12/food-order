@@ -35,7 +35,7 @@ class Admin{
         if(username == null|| password == null)
             System.out.println("Every Field is Required");
 
-        if(!username.equals(this.username) || !password.equals(this.password))
+        else if(!username.equals(this.username) || !password.equals(this.password))
             System.out.println("Wrong Credential");
 
         else
@@ -49,14 +49,14 @@ class Admin{
     private void changePassword(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter New Password : ");
-        String password = sc.nextLine();
+        String newPassword = sc.nextLine();
 
-        if(password.equals(this.password))
+        if(newPassword.equals(this.password))
             System.out.println("Old Password can't be new Password");
-        else if(password.isEmpty())
+        else if(newPassword.isEmpty())
             System.out.println("Password can't be Empty");
         else{
-            this.password = password;
+            this.password = newPassword;
             System.out.println("Password Changed Successfully!!!!!!");
             sc.close();
         }
@@ -65,14 +65,14 @@ class Admin{
     private void changeUsername(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter New Username : ");
-        String username = sc.nextLine();
+        String newUsername = sc.nextLine();
 
-        if(username.equals(this.username))
+        if(newUsername.equals(this.username))
             System.out.println("Old Username can't be new Username");
-        else if(username.isEmpty())
+        else if(newUsername.isEmpty())
             System.out.println("Username can't be Empty");
         else{
-            this.username = username;
+            this.username = newUsername;
             System.out.println("Username Changed Successfully!!!!!!");
         }
         sc.close();
@@ -181,8 +181,8 @@ class Serving{
 
         int Total = 0;
 
-        if(sideDishId==-1)
-            Total = (mainDishPrice*quantity[0]);
+        if(sideDishId==0)
+            Total = (mainDishPrice * quantity[0]);
         else
             Total = (mainDishPrice*quantity[0])+(sideDishPrice*quantity[1]);
 
@@ -245,8 +245,7 @@ class User{
 
     public void chooseUser(Breakfast breakfast, Lunch lunch, Dinner dinner, Sidedish sidedish, Cart cart, Payment payment){
         Scanner sc = new Scanner(System.in);
-        char ch = 'y';
-        while (ch=='y' || ch=='Y'){
+        while (true){
             System.out.println("""
                 1. Admin
                 2. Consumer
@@ -266,7 +265,8 @@ class User{
                     System.out.println("Wrong Option");
             }
             System.out.print("\nDo you want to continue(Y/N) : ");
-            ch = sc.next().toLowerCase().charAt(0);
+            char ch = sc.next().toLowerCase().charAt(0);
+            if(ch=='n') break;
         }
         sc.close();
     }
