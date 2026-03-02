@@ -12,7 +12,6 @@ class Admin{
         this.Lunch = Lunch;
         this.Dinner = Dinner;
         this.Sidedish = Sidedish;
-
         if(Breakfast.getFood().isEmpty())
             Breakfast.makeFood();
         if(Lunch.getFood().isEmpty())
